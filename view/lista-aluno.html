@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <div class="page-header">
+        <h1><label >Alunos</label></h1>
+    </div>
+    <div >
+        <nav aria-label="...">
+            <div class="col-lg-1">
+                <button class="btn btn-primary" ng-click="irPara('/cadastroAluno')" >
+                    <span class="glyphicon glyphicon-ok"></span>
+                    Adicionar
+                </button>
+            </div>
+            <div class="col-lg-10">
+                <div >
+                    <select ng-model="selected" class="form-control" ng-change="listaAlunoCurso(selected)">
+                        <option value=''>Escolha um curso</option>
+                        <option ng-repeat="cli in cursos" value="{{cli.id}}">{{cli.nome}}</option>
+                    </select>
+                </div>
+
+            </div>
+            <div>
+                <ul class="pager">
+                    <li><button class="btn btn-default btn-large" ng-click="voltPagA(p)"  ng-disabled="selected"><span class="glyphicon glyphicon-chevron-left"></span></button></li>
+                    <li><button class="btn btn-default btn-large" ng-click="mudarPagA(p)"  ng-disabled="selected"><span class="glyphicon glyphicon-chevron-right"></span> </button></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Panel heading</div>
+        <table class="table">
+            <thead>
+            <tr><th>
+                CPF
+            </th><th>
+                Nome
+            </th><th>
+                E-Mail
+            </th></tr>
+            </thead>
+
+            <tbody ng-repeat="cli in alunos">
+            <tr><td>
+                {{cli.cpf}}
+            </td><td>
+                {{cli.nome}}
+            </td><td>
+                {{cli.email}}
+            </td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>

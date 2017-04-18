@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div class="page-header">
+        <h1><label >Curso</label></h1>
+    </div>
+    <div class="col-lg-11">
+        <button class="btn btn-primary" ng-click="irPara('/cadastroCurso')" >
+            <span class="glyphicon glyphicon-ok"></span>
+            Adicionar
+        </button>
+    </div>
+
+    <nav aria-label="...">
+        <ul class="pager">
+            <li><button class="btn btn-default btn-large" ng-click="voltPagC(p)" ><span class="glyphicon glyphicon-chevron-left"></span></button></li>
+            <li><button class="btn btn-default btn-large" ng-click="mudarPagC(p)" ><span class="glyphicon glyphicon-chevron-right"></span> </button></li>
+        </ul>
+    </nav>
+    <div class="panel panel-default">
+        <div class="panel-heading">Panel heading</div>
+        <table class="table">
+            <thead>
+            <tr><th>
+                ID
+            </th><th>
+                Nome
+            </th></tr>
+            </thead>
+
+            <tbody ng-repeat="cli in curso">
+            <tr><td>
+                {{cli.id}}
+            </td><td>
+                {{cli.nome}}
+            </td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="page-header">
+        <h1><label>Cadastro de Aluno</label></h1>
+    </div>
+    <form>
+        <select ng-model="aluno.CursoId" class="form-control">
+            <option value=''>Escolha um curso</option>
+            <option ng-repeat="cli in cursos" value="{{cli.id}}">{{cli.nome}}</option>
+        </select>
+        <label>Nome: </label>
+        <input class="form-control" ng-model="aluno.nome"><br>
+        <label>CPF: </label>
+        <input class="form-control" ng-model="aluno.cpf"><br>
+        <label>E-mail: </label>
+        <input class="form-control" ng-model="aluno.email"><br>
+        <br>
+        <button class="btn btn-primary" ng-click="salvarAluno(aluno)">
+            <span class="glyphicon glyphicon-ok"></span>
+            Salvar
+        </button>
+    </form>
+</div>

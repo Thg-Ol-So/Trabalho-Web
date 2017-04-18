@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="trabalhoweb">
+<head>
+    <meta charset="UTF-8">
+    <title>Trabalho Web</title>
+    <link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.min.css"/>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/router/router.js"></script>
+
+    <script src="js/service/alunoAPIService.js"></script>
+    <script src="js/service/cursoAPIService.js"></script>
+    <script src="js/service/disciplinaAPIService.js"></script>
+
+    <script src="js/controller/discController.js"></script>
+    <script src="js/controller/alunoController.js"></script>
+    <script src="js/controller/cursoController.js"></script>
+
+    <script src="js/controller/cadastro-cursoController.js"></script>
+    <script src="js/controller/cadastro-alunoController.js"></script>
+    <script src="js/controller/cadastro-discController.js"></script>
+
+
+</head>
+<body>
+    <div ng-include="'view/cabecalho.html'">
+
+    </div>
+    <div class="container-fluid" >
+        <div ng-view="view" class="row"></div>
+    </div>
+</body>
+</html>

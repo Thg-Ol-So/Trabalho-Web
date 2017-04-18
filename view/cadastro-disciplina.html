@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="page-header">
+        <h1><label >Cadastro de Disciplina</label></h1>
+    </div>
+    <form>
+        <select ng-model="disc.CursoId" class="form-control" >
+            <option value=''>Escolha um curso</option>
+            <option ng-repeat="cli in cursos" value="{{cli.id}}">{{cli.nome}}</option>
+        </select>
+    <label>Nome: </label>
+    <input class="form-control" ng-model="disc.nome" ><br>
+    <label >Descrição: </label>
+    <input class="form-control" ng-model="disc.descricao" ><br>
+    <br>
+    <button class="btn btn-primary" ng-click="salvarDisc(disc)">
+        <span class="glyphicon glyphicon-ok"></span>
+        Salvar
+    </button>
+    </form>
+</div>
