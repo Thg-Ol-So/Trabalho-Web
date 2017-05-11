@@ -43,5 +43,10 @@ angular.module("trabalhoweb")
             controller: "cadastro-discController"
 
         });
+        $routeProvider.when("/matricula", {
+            templateUrl: "view/matricula.html",
+            controller: "matriculaController"
+
+        });
 
     }]);

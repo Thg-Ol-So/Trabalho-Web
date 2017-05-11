@@ -1,0 +1,104 @@
+<div class="row">
+    <h1>Cadastro de Matricula</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-5">
+            <div class="col-md-12">
+                <label for="idC">Curso</label>
+                <select ng-model="selected" id="idC" class="form-control" ng-change="listaDisc(selected)">
+                    <option value=''>Escolha um curso</option>
+                    <option ng-repeat="cli in curso" value="{{cli.id}}">{{cli.nome}}</option>
+                </select>
+            </div>
+
+            <hr>
+            <br><br>
+            <div class="col-md-12 ">
+                <div style="width:450px; height: 350px; overflow: auto;  margin-top: 108px;">
+                    <table class="table table-hover  table-bordered table-responsive ">
+                        <thead>
+                        <th class="text-center" colspan="3">ALUNOS</th>
+                        </thead>
+                        <thead>
+                        <th class="text-center col-xs-3 col-md-3">ID</th>
+                        <th class="text-center col-xs-3 col-md-3"> Aluno</th>
+                        <th class="text-center col-xs-3 col-md-3"> Selecionar</th>
+                        </thead>
+                        <tbody ng-repeat="cli in alunos">
+                        <tr>
+                            <td class="text-center"> {{cli.id}}</td>
+                            <td class="text-center"> {{cli.nome}}</td>
+                            <td class="text-center">
+                                <label><input type="checkbox" ng-click="alunoSelecionado(cli,alunosSelecionado)"
+                                              value="{{cli}}"> </label>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 text-center" style="margin-top: 300px;">
+
+            <button class="btn-primary btn" ng-click="addAlunlos()">
+                <span class="glyphicon glyphicon-triangle-left" aria-hidden="true">
+                            </span> <span class="glyphicon glyphicon-minus" aria-hidden="true">
+                            </span> <span class="glyphicon glyphicon-triangle-right" aria-hidden="true">
+                            </span>
+            </button>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="col-md-12">
+                    <label for="idD">Disciplina</label>
+                    <select ng-model="slSemestre" id="idD" ng-disabled="!selected" class="form-control"
+                            ng-change="listarSemestre(slSemestre)">
+                        <option value=''>Escolha uma Disciplina</option>
+                        <option ng-repeat="disc in disciplinas" value="{{disc.id}}">{{disc.nome}}</option>
+                    </select>
+                </div>
+
+                <div class="col-md-12" style="margin-top: 10px;">
+                    <label for="idS">Semestre</label>
+                    <select ng-model="slAluno" id="idS" ng-disabled="!slSemestre" class="form-control"
+                            ng-change="listaAluno(slAluno)">
+                        <option value=''>Escolha um Semestre</option>
+                        <option ng-repeat="sem in semestre" value="{{sem.id}}">{{sem.descricao}}</option>
+                    </select>
+                </div>
+                <div class="col-md-10">
+                    <br><br>
+                    <div style="width:450px; height: 350px; overflow: auto; margin-top: 20px;">
+                        <table class="table  table-hover table-bordered table-responsive ">
+                            <thead>
+                            <th class="text-center " colspan="3">ALUNOS</th>
+                            </thead>
+                            <thead>
+                            <th class="col-xs-3 col-md-3 text-center"> ID</th>
+                            <th class="col-xs-3 col-md-3 text-center"> Aluno</th>
+                            </thead>
+                            <tbody ng-repeat="cli in addAlunosCadastrados">
+                            <tr>
+                                <td class="text-center"> {{cli.alunoid}}</td>
+                                <td class="text-center"> {{cli.alunonome}}</td>
+                            </tr>
+                            </tbody>
+                            <tbody ng-repeat="al in addAlunosSelecionado">
+                            <tr class="success">
+                                <td class="text-center"> {{al.id}}</td>
+                                <td class="text-center"> {{al.nome}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <div ng-show="slAluno" class="text-center">
+                        <button class="btn-danger btn " ng-click="salvar()">Matricular
+                        <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
